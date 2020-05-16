@@ -1,0 +1,87 @@
+
+<h2>Failed Charges </h2>
+<table class="payments">
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Refunded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charge_list[:failed_charges].each do |payment| %>
+      <tr class="red-bg">
+        <td><%= payment.date_created %></td>
+        <td><%= payment.paid %></td>
+        <td><%= payment.amount %> <%= payment.currency %></td>
+        <td><%= payment.customer.fullname %></td>
+        <td><%= payment.refunded %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<hr/>
+<h2> Disputed Charges </h2>
+<table class="payments">
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Refunded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charge_list[:disputed_charges].each do |payment| %>
+      <tr class="disputed-bg">
+        <td><%= payment.date_created %></td>
+        <td><%= payment.paid %></td>
+        <td><%= payment.amount %> <%= payment.currency %></td>
+        <td><%= payment.customer.fullname %></td>
+        <td><%= payment.refunded %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<hr/>
+<h2>Successful Charges </h2>
+
+<table class="payments">
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Paid</th>
+      <th>Amount</th>
+      <th>Customer</th>
+      <th>Refunded</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @charge_list[:successful_charges].each do |payment| %>
+      <tr>
+        <td><%= payment.date_created %></td>
+        <td><%= payment.paid %></td>
+        <td><%= payment.amount %> <%= payment.currency %></td>
+        <td><%= payment.customer.fullname %></td>
+        <td><%= payment.refunded %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.red-bg {
+  background: #FF0000;
+}
+
+.disputed-bg {
+  background-color: #FF5400;
+}
+.payments td, .payments th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.payments th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
